@@ -19,7 +19,7 @@ const Favorites = () => {
       } = useFavorites();  
 
     return (
-        <React.Fragment>
+        <>
             <Header />
             <div className="Favorites">
             {
@@ -53,7 +53,7 @@ const Favorites = () => {
                 )
             }
             </div>
-        </React.Fragment>
+        </>
     );
 };
 

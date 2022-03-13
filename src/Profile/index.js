@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Header } from "../Header";
 import { useUser } from "../App/useUser";
@@ -11,7 +11,7 @@ const Profile = () => {
     const {user, isAuthenticated, isLoading} = useAuth0();
     const {saveGitHubUsername, getGitHubUser} = useUser();
     const { resetFavorites } = useFavorites();
-    const [newGithubUsernmae, setGithubUsernmae] = React.useState('');
+    const [newGithubUsernmae, setGithubUsernmae] = useState('');
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -28,7 +28,7 @@ const Profile = () => {
     }
 
     return (
-        <React.Fragment>
+        <>
             <Header />
             {
                 isAuthenticated ? (
@@ -61,7 +61,7 @@ const Profile = () => {
                 )
             }
             <Link to="/" className="HomeButton"><MdHome /></Link>
-        </React.Fragment>
+        </>
         
     );
 };

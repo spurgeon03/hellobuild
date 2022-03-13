@@ -36,7 +36,7 @@ const Home = () => {
     }
 
     return (
-        <React.Fragment>            
+        <>            
             <Header />
             <div className="Home">
             {
@@ -84,7 +84,7 @@ const Home = () => {
                 )
             }
             </div>
-        </React.Fragment>   
+        </>   
     );
 };
 

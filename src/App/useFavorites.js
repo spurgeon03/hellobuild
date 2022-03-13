@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
 function useFavorites(){
@@ -7,7 +7,7 @@ function useFavorites(){
         saveItem: saveFavorites,
     } = useLocalStorage('FAVORITES_V1', []);
 
-      const [searchValue, setSearchValue] = React.useState('');
+      const [searchValue, setSearchValue] = useState('');
 
       const totalFavorites = favorites.length;
     

@@ -1,5 +1,4 @@
 import React from "react";
-import { RegisterForm } from "../RegisterForm";
 import { Favorites } from "../Favorites";
 import { Profile } from "../Profile";
 import { Home } from "../Home";
@@ -21,9 +20,6 @@ const App = () => (
           </Route>
           <Route path="/favorites">
             <Favorites />
-          </Route>
-          <Route path="/register">
-            <RegisterForm />
           </Route>
         </Switch>
     </Router>

@@ -1,9 +1,9 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { useUser } from "../App/useUser";
 
 function useRepositories(){
-    const [repositories, setRepositories] = React.useState([]);
+    const [repositories, setRepositories] = useState([]);
     const {getGitHubUser} = useUser();
 
     const GetRepositoriesQuery = gql`
@@ -27,14 +27,14 @@ function useRepositories(){
         data
       } = useQuery( GetRepositoriesQuery, {variables: {owner: getGitHubUser()}} );
 
-    React.useEffect(() => {
+    useEffect(() => {
       if(!loadingGithub){
         const current = (data?.user && data.user.repositories.nodes ) ? data.user.repositories.nodes : [];
         setRepositories(current);
       }
     }, [loadingGithub]); 
   
-    const [searchValue, setSearchValue] = React.useState('');
+    const [searchValue, setSearchValue] = useState('');
 
     const totalRepositories = repositories.length;
 

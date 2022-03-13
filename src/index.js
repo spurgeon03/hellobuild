@@ -11,7 +11,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { Auth0Provider } from '@auth0/auth0-react';
 
-const token = "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";
+const token = process.env.REACT_APP_GITHUB_TOKEN;
 
 const authLink = setContext((_, { headers }) => {
   return {
